@@ -1,0 +1,103 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://gejdr0ok2b0h"
+path="res://.godot/imported/Industrial_exterior_v2.glb-5902288de8a687bd8fa12c0164e5a3da.scn"
+
+[deps]
+
+source_file="res://textures/Industrial_exterior_v2.glb"
+dest_files=["res://.godot/imported/Industrial_exterior_v2.glb-5902288de8a687bd8fa12c0164e5a3da.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Bags_1": {
+"generate/physics": true,
+"physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":1.0,"rough":false,"bounce":0.0,"absorbent":false,"script":null)
+,
+"physics/shape_type": 1
+},
+"PATH:Bags_2": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:Barrel_1": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:Box_wood": {
+"generate/physics": true,
+"physics/body_type": 2
+},
+"PATH:Bridges_1": {
+"generate/physics": true
+},
+"PATH:Bridges_2": {
+"generate/physics": true
+},
+"PATH:Bridges_3": {
+"generate/physics": true
+},
+"PATH:Bridges_end": {
+"generate/physics": true
+},
+"PATH:Bridges_stairs_1": {
+"generate/physics": true
+},
+"PATH:Bridges_stairs_2": {
+"generate/physics": true
+},
+"PATH:Bridges_support_1": {
+"generate/physics": true
+},
+"PATH:Bridges_support_3": {
+"generate/physics": true
+},
+"PATH:Bridges_turn": {
+"generate/physics": true
+},
+"PATH:Building_1": {
+"generate/physics": true
+},
+"PATH:Building_2": {
+"generate/physics": true
+},
+"PATH:Building_3": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Metal_cabinet_1": {
+"generate/physics": true
+},
+"PATH:Metal_cabinet_2": {
+"generate/physics": true
+},
+"PATH:Ventilation_2": {
+"generate/physics": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
