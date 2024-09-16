@@ -96,6 +96,21 @@ _subresources={
 },
 "PATH:Ventilation_2": {
 "generate/physics": true
+},
+"PATH:Wall": {
+"generate/physics": true
+},
+"PATH:Wall_column": {
+"generate/physics": true
+},
+"PATH:Wall_corner_1": {
+"generate/physics": true
+},
+"PATH:Wall_corner_2": {
+"generate/physics": true
+},
+"PATH:Wall_corner_3": {
+"generate/physics": true
 }
 }
 }
