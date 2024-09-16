@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://45gbg8h4i8mp"
-path.s3tc="res://.godot/imported/tree02_winter.png-2b796431b29db7e93c29c162a4000a28.s3tc.ctex"
+uid="uid://btpf0tmn2ovi0"
+path.s3tc="res://.godot/imported/car7.png-53a3a9fb1fc0f6527311b6fdbd271175.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://tree02_winter.png"
-dest_files=["res://.godot/imported/tree02_winter.png-2b796431b29db7e93c29c162a4000a28.s3tc.ctex"]
+source_file="res://assets/car7.png"
+dest_files=["res://.godot/imported/car7.png-53a3a9fb1fc0f6527311b6fdbd271175.s3tc.ctex"]
 
 [params]
 
