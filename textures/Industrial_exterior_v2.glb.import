@@ -35,6 +35,7 @@ _subresources={
 "nodes": {
 "PATH:Bags_1": {
 "generate/physics": true,
+"physics/body_type": 1,
 "physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":1.0,"rough":false,"bounce":0.0,"absorbent":false,"script":null)
 ,
 "physics/shape_type": 1
@@ -47,9 +48,21 @@ _subresources={
 "generate/physics": true,
 "physics/body_type": 1
 },
+"PATH:Barrel_2": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:Barrel_3": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:Box_wide_wood": {
+"generate/physics": true,
+"physics/body_type": 1
+},
 "PATH:Box_wood": {
 "generate/physics": true,
-"physics/body_type": 2
+"physics/body_type": 1
 },
 "PATH:Bridges_1": {
 "generate/physics": true
@@ -81,6 +94,15 @@ _subresources={
 "PATH:Building_1": {
 "generate/physics": true
 },
+"PATH:Building_10": {
+"generate/physics": true
+},
+"PATH:Building_11": {
+"generate/physics": true
+},
+"PATH:Building_12": {
+"generate/physics": true
+},
 "PATH:Building_2": {
 "generate/physics": true
 },
@@ -88,10 +110,62 @@ _subresources={
 "generate/physics": true,
 "physics/shape_type": 2
 },
+"PATH:Building_4": {
+"generate/physics": true
+},
+"PATH:Building_6": {
+"generate/physics": true
+},
+"PATH:Building_7": {
+"generate/physics": true
+},
+"PATH:Building_8": {
+"generate/physics": true
+},
+"PATH:Building_9": {
+"generate/physics": true
+},
+"PATH:Cargo_2_empty": {
+"generate/physics": true
+},
+"PATH:Cargo_2_full": {
+"generate/physics": true
+},
+"PATH:Cooling_tower": {
+"generate/physics": true
+},
+"PATH:Fence_corner": {
+"generate/physics": true
+},
+"PATH:Fence_long": {
+"generate/physics": true
+},
+"PATH:Fence_short": {
+"generate/physics": true
+},
+"PATH:Generator": {
+"generate/physics": true
+},
+"PATH:Liquid_reservoir_1": {
+"generate/physics": true
+},
+"PATH:Liquid_reservoir_2": {
+"generate/physics": true
+},
 "PATH:Metal_cabinet_1": {
 "generate/physics": true
 },
 "PATH:Metal_cabinet_2": {
+"generate/physics": true
+},
+"PATH:Palet_single": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:Palet_stack": {
+"generate/physics": true
+},
+"PATH:Roadblock": {
 "generate/physics": true
 },
 "PATH:Ventilation_2": {

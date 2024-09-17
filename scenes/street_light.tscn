@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://651g8wdfohbq"]
+
+[ext_resource type="PackedScene" uid="uid://c2nbtl00u3wp4" path="res://assets/street_light.glb" id="1_nhxdc"]
+
+[node name="street_light" instance=ExtResource("1_nhxdc")]
+
+[node name="StaticBody3D" parent="Sketchfab_model/c11d6cc177d540c1b130afe5623e93d0_obj_cleaner_materialmerger_gles/Object_2" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Sketchfab_model/c11d6cc177d540c1b130afe5623e93d0_obj_cleaner_materialmerger_gles/Object_2/StaticBody3D" index="0"]
+visible = false
+
+[node name="StaticBody3D" parent="Sketchfab_model/c11d6cc177d540c1b130afe5623e93d0_obj_cleaner_materialmerger_gles/Object_3" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Sketchfab_model/c11d6cc177d540c1b130afe5623e93d0_obj_cleaner_materialmerger_gles/Object_3/StaticBody3D" index="0"]
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.454566, 0.890713, 0, -0.890713, 0.454566, -0.255862, 14.7962, -2.91743)
+light_color = Color(0.640325, 0.567568, 0.321875, 1)
+light_energy = 0.24
+light_volumetric_fog_energy = 1.21

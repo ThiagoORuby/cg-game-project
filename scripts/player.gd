@@ -15,8 +15,10 @@ var box_collision: CollisionShape3D = null
 var original_distance: float
 
 func _ready():
+	# captura mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+# Muda rotação da cabeça/camera com base no movimento do mouse
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
@@ -24,32 +26,31 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(80))
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Adiciona gravidade
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	# quit the game
+	# Fecha o jogo
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 
-	# Handle jump.
+	# Executa pulo
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-	# Grab and Drop
+	# Agarra um objeto
 	if Input.is_action_just_pressed("grab"):
 		if grabbed_object:
 			drop_object()
 		else:
 			grab_object()
 	
+	# Fixa o objeto capturado na tela e aplica transformações
 	if grabbed_object:
 		grabbed_object.global_position = holdPos.global_position
-		#grabbed_object.global_position = camera.global_position - camera.global_transform.basis.z * original_distance
 		apply_transformations()
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Pega a direção do movimento e executa a translação
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:    
@@ -63,9 +64,7 @@ func _physics_process(delta: float) -> void:
 	
 func grab_object():
 	if raycast.is_colliding():
-		print("COLISAOO")
 		var target = raycast.get_collider()
-		print(target.name)
 		if target is RigidBody3D:
 			grabbed_object = target
 			box_collision = grabbed_object.get_node("CollisionShape3D")
@@ -74,10 +73,14 @@ func grab_object():
 				grabbed_object.global_transform.origin
 				)
 			grabbed_object.collision_mask = 0
+			grabbed_object.collision_layer = 0
 
 func drop_object():
 	if grabbed_object:
 		grabbed_object.collision_mask = 1
+		grabbed_object.set_collision_layer_value(0, false)
+		grabbed_object.set_collision_layer_value(1,true)
+		grabbed_object.set_collision_layer_value(2,true)
 		grabbed_object.freeze = false
 		grabbed_object = null
 		box_collision = null
