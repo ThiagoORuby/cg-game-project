@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=4 uid="uid://dfdjl4qjitvuw"]
+
+[ext_resource type="Script" path="res://scripts/grabbable.gd" id="1_tx08i"]
+[ext_resource type="Texture2D" uid="uid://df26al2tidkkq" path="res://textures/Industrial_exterior_v2_Box_wood.png" id="2_n86ps"]
+[ext_resource type="Script" path="res://scripts/outlined_object.gd" id="3_auewo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ra4x2"]
+size = Vector3(1.86337, 0.743958, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hw0rl"]
+resource_local_to_scene = true
+resource_name = "Box_wood"
+cull_mode = 2
+albedo_texture = ExtResource("2_n86ps")
+metallic = 1.0
+roughness = 0.858579
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4c8sn"]
+_surfaces = [{
+"aabb": AABB(-0.895083, -0.0284443, -0.546832, 1.79017, 0.671381, 1.09366),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("BAADAAUABAAAAAMABAAGAAcABAAFAAYAAgAHAAYAAgABAAcAAwAGAAUAAwACAAYAAAACAAMAAAABAAIABwAAAAQABwABAAAA"),
+"name": "Box_wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//////7/AAAAAP////8AAAAA//8AAAAA/////wAAAAD//wAA/v8AAP//AAAAAAAAAAAAAAAAAAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7m0hg"]
+resource_local_to_scene = true
+resource_name = "Industrial_exterior_v2_Box_wide_wood"
+_surfaces = [{
+"aabb": AABB(-0.895083, -0.0284443, -0.546832, 1.79017, 0.671381, 1.09366),
+"attribute_data": PackedByteArray("RMXyrTfFdK1vAoUAbwKFAHgC8q17AnStu3yFAHgC8q17AmFURMXyrTfFYVS7fIUAN8V0rUTFyv9vArBTN8VhVETFyv+7fLBTu3ywU3sCYVR4Asr/bwKwU3sCdK14Asr/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("DgALABEADgACAAsADAATABYADAAPABMABgAVABIABgADABUACQAUABAACQAHABQAAQAIAAoAAQAFAAgAFwAAAA0AFwAEAAAA"),
+"material": SubResource("StandardMaterial3D_hw0rl"),
+"name": "Box_wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//////7/AID//////v//v//////+//+/AAD/////AAAAAP////8AgAAA//////+/AAD//wAAAAAAAP//AAAAAAAA//8AAP+//////wAAAAD/////AAD/v/////8AAP+///8AAP7//z///wAA/v8AgP//AAD+//+///8AAAAA/z///wAAAAAAAP//AAAAAP+/AAAAAAAAAAAAAAAAAAD/PwAAAAAAAAAAAAAAAP//AAAAAAAA////PwAAAAD//wCA/3///////3//fwAA/z//f/9///////9//z//f////3////9/////f////3//fwAAAAD/f/9/////fwAAAAD/f////3//fwAA/z//fwAA/3////9//z//fwAA/3//f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4c8sn")
+
+[node name="Box_wide_wood" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9148, 0.708795, 4.7391)
+collision_layer = 3
+collision_mask = 3
+mass = 6.0
+script = ExtResource("1_tx08i")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00260925, 0.284874, 0)
+shape = SubResource("BoxShape3D_ra4x2")
+
+[node name="Box_wide_wood" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00260925, -0.284874, 0)
+mesh = SubResource("ArrayMesh_7m0hg")
+skeleton = NodePath("")
+script = ExtResource("3_auewo")

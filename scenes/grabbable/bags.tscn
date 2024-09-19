@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=4 uid="uid://kudcxdoelbp4"]
+
+[ext_resource type="Script" path="res://scripts/grabbable.gd" id="1_vgh3v"]
+[ext_resource type="Texture2D" uid="uid://d3ifne0vggkrs" path="res://textures/Industrial_exterior_v2_Bags.png" id="2_1ff13"]
+[ext_resource type="Script" path="res://scripts/outlined_object.gd" id="3_weg4n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ng32l"]
+size = Vector3(2.62823, 2.58117, 1.62897)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ya7in"]
+resource_local_to_scene = true
+resource_name = "Bags_2"
+cull_mode = 2
+albedo_texture = ExtResource("2_1ff13")
+metallic = 1.0
+roughness = 0.858579
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6dg8i"]
+_surfaces = [{
+"aabb": AABB(-1.24714, -0.0396755, -0.760708, 2.49772, 2.5347, 1.60311),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AQAFAAIAAQAAAAUABAACAAUABAADAAIABAAAAAcABAAFAAAABwADAAQABwAGAAMAAgAGAAEAAgADAAYAAAAGAAcAAAABAAYA"),
+"name": "Bags_2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAAAA//8AAAAAAAD+////AAD///7//v8AAP////8AAAAAAAAAAP7/AAD+/wAA/v8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e4oyr"]
+resource_local_to_scene = true
+resource_name = "Industrial_exterior_v2_Bags_2"
+_surfaces = [{
+"aabb": AABB(-1.24714, -0.0396755, -0.760708, 2.49772, 2.5347, 1.60311),
+"attribute_data": PackedByteArray("yKL7b4FBr3WBQa91MwCvdQ9G+29Cp691MwCbAUKnmwECqfwAgUGbAYFBmwECqR02QqebARH/HTYzAJsBgUGbARH//ACBQZsBgUGvdQ9Gt3aBQa91yKK3dkKnr3UzAK91"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("BQAPAAcABQABAA8ADQAIABAADQALAAgADgACABcADgARAAIAFgAKAAwAFgAUAAoABgASAAMABgAJABIAAAATABUAAAAEABMA"),
+"material": SubResource("StandardMaterial3D_ya7in"),
+"name": "Bags_2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA/z///wAAAAD/////AAAAAP+/AAAAAAAA/78AAAAAAAD/PwAAAAAAAP//AAD//wAA/78AAP//AAD//wAA//8AAP+/AAD+/////78AAP7///8AgAAA/v////+////+//7/AID///7//v//v////v/+//+//////wAA////////AAD/v/////8AAP+/AAAAAP7//78AAAAA/v//PwAAAAD+/wCA/v8AAP7//z/+/wAA/v8AgP7/AAD+//+/AAD/f/9//v//fwAA/3/+/wAA/3//f/7//3/+//9//v////9//3/+//9////+//9//3///////3//fwAA/3/+/////3//fwAA/3/+/wAA/3//f///AAD/f/9/////fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6dg8i")
+
+[node name="Bags" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4402, -0.158339, -8.47949)
+collision_layer = 3
+collision_mask = 3
+mass = 10.0
+script = ExtResource("1_vgh3v")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0121412, 1.2363, 0.0137024)
+shape = SubResource("BoxShape3D_ng32l")
+
+[node name="Bags_2" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0121412, -1.2363, -0.0137024)
+mesh = SubResource("ArrayMesh_e4oyr")
+skeleton = NodePath("")
+script = ExtResource("3_weg4n")

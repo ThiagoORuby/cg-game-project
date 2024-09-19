@@ -13,12 +13,13 @@ const SENSITIVITY = 0.005
 var grabbed_object: RigidBody3D = null
 var box_collision: CollisionShape3D = null
 var original_distance: float
+var outline_shader_material = null
 
 func _ready():
 	# captura mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-# Muda rotação da cabeça/camera com base no movimento do mouse
+# Muda rotação da cabeça/cwamera com base no movimento do mouse
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
@@ -53,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	# Pega a direção do movimento e executa a translação
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:    
+	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
@@ -68,6 +69,7 @@ func grab_object():
 		if target is RigidBody3D:
 			grabbed_object = target
 			box_collision = grabbed_object.get_node("CollisionShape3D")
+			box_collision.get_child(0).apply_outline()
 			grabbed_object.freeze = true
 			original_distance = camera.global_transform.origin.distance_to(
 				grabbed_object.global_transform.origin
@@ -81,6 +83,7 @@ func drop_object():
 		grabbed_object.set_collision_layer_value(0, false)
 		grabbed_object.set_collision_layer_value(1,true)
 		grabbed_object.set_collision_layer_value(2,true)
+		box_collision.get_child(0).remove_outline()
 		grabbed_object.freeze = false
 		grabbed_object = null
 		box_collision = null
