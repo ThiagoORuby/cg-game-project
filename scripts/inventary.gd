@@ -1,10 +1,10 @@
 class_name UIInventary extends VBoxContainer
 
 var item_icons = {
-	"car_key": preload("res://cpu.png"),
-	"gas": preload("res://cpu.png"),
-	"wheel": preload("res://cpu.png"),
-	"gate_key": preload("res://cpu.png")
+	"car_key": preload("res://car_key.png"),
+	"steering_wheel": preload("res://steering_wheel.png"),
+	"gas": preload("res://gasoline.png"),
+	"gate_key": preload("res://gate_key.png")
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +19,7 @@ func add_item_to_inventory(item_name: String):
 	var icon_texture = item_icons.get(item_name, null)
 	if icon_texture:
 		var slot = PanelContainer.new()
+		slot.set("bg_color", Color(0.5, 0.5, 0.5, 0.8))
 
 		var icon = TextureRect.new()
 		icon.texture = icon_texture

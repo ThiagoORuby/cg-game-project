@@ -2,10 +2,10 @@ class_name GlobalState extends Node
 
 var scene_states = {}
 var item_hash = {
-	"car_key": false,
-	"gas": false,
-	"wheel": false,
-	"gate_key": false
+	"car_key": true,
+	"steering_wheel": true,
+	"gas": true,
+	"gate_key": true
 }
 
 # Sinal emitido ao coletar um item

@@ -24,6 +24,10 @@ global_state="*res://scripts/global_state.gd"
 
 project/assembly_name="SuperLiminal Like"
 
+[global_group]
+
+saveable_objects=""
+
 [input]
 
 left={

@@ -21,9 +21,9 @@ func _process(delta: float) -> void:
 			
 func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
-		print(internal_scene_path)
 		info_label.text = "Pressione L para sair"
 		info_label.visible = true
+
 
 
 func _on_body_exited(body: Node3D) -> void:
