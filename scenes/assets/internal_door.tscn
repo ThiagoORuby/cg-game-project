@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://56e46bgrkinq"]
+
+[ext_resource type="Script" path="res://scripts/exit_door.gd" id="1_bat8b"]
+[ext_resource type="AudioStream" uid="uid://dqbu35nppl0xt" path="res://sounds/door_open_close.mp3" id="2_7jbhb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04kmf"]
+size = Vector3(1.5, 5, 2)
+
+[node name="door" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12258, 0.604487, 10.3868)
+script = ExtResource("1_bat8b")
+internal_scene_path = "world"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_04kmf")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_7jbhb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

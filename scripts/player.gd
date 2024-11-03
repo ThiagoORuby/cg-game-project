@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 
 const SPEED = 5.0
@@ -12,8 +12,6 @@ const SENSITIVITY = 0.005
 
 var grabbed_object: RigidBody3D = null
 var box_collision: CollisionShape3D = null
-var original_distance: float
-var outline_shader_material = null
 
 func _ready():
 	# captura mouse
@@ -71,16 +69,12 @@ func grab_object():
 			box_collision = grabbed_object.get_node("CollisionShape3D")
 			box_collision.get_child(0).apply_outline()
 			grabbed_object.freeze = true
-			original_distance = camera.global_transform.origin.distance_to(
-				grabbed_object.global_transform.origin
-				)
 			grabbed_object.collision_mask = 0
 			grabbed_object.collision_layer = 0
 
 func drop_object():
 	if grabbed_object:
 		grabbed_object.collision_mask = 1
-		grabbed_object.set_collision_layer_value(0, false)
 		grabbed_object.set_collision_layer_value(1,true)
 		grabbed_object.set_collision_layer_value(2,true)
 		box_collision.get_child(0).remove_outline()

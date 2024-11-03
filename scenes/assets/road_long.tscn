@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=4 uid="uid://oty1q2syro1j"]
+
+[ext_resource type="Texture2D" uid="uid://gpqji3sa6n1k" path="res://textures/Industrial_exterior_v2_Road.png" id="1_7t1ti"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1gsn"]
+resource_name = "Road"
+cull_mode = 2
+albedo_texture = ExtResource("1_7t1ti")
+metallic = 1.0
+roughness = 0.858579
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_abxvr"]
+_surfaces = [{
+"aabb": AABB(-5, -0.0918198, -10, 10, 0.18364, 20),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("CwAJAAgACwAKAAkACQAFAAgACQAGAAUACwAEAAoACwAHAAQAAwAGAAIAAwAFAAYABwAAAAQABwABAAAA"),
+"name": "Road",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAD//wAAAAAAAP7///8AAP7//v8AAAAA///+////AAAqJ/7/AAAAANTY/v///wAA1Nj+/wAAAAAqJ/7///8AANTYAAD//wAA1NgAAAAAAAAqJwAAAAAAAConAAD//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1h4ly"]
+resource_name = "Industrial_exterior_v2_Road_long"
+_surfaces = [{
+"aabb": AABB(-5, -0.0918198, -10, 10, 0.18364, 20),
+"attribute_data": PackedByteArray("AAD///////8AAAAA//8AAAAA9dMAAPXT//8mLP//JiwAACYsAAAmLP//9dP///XT//8eNP//HjQAAB40AAAeNAAA/ssAAP7L///+y////ss="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("EgAPAA0AEgAQAA8ADgAGAAwADgAIAAYAEwAFABEAEwALAAUAAwAJAAIAAwAHAAkACgAAAAQACgABAAAA"),
+"material": SubResource("StandardMaterial3D_r1gsn"),
+"name": "Road",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AAD//wAAVNUAAP7///9U1f7//v8AAFTV///+////VNUqJ/7/AABU1Son/v8AAP//1Nj+/////7/U2P7///9U1dTY/v8AAP+/1Nj+/wAAVNUqJ/7///9U1Son/v//////1NgAAP///7/U2AAA//9U1dTYAAAAAP+/1NgAAAAAVNUqJwAAAABU1SonAAAAAP//KicAAP//VNUqJwAA/////6qqqqqqqqqqqqqqqqqqqqqqqqqq/7//f/9///+qqqqq/3///6qqqqqqqqqq/7//f/9///+qqqqq/3///6qqqqqqqqqq/7//f6qqqqr/v/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_abxvr")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hq4lx"]
+points = PackedVector3Array(4.99902, 0.0918019, 10, 3.46907, -0.0918198, 10, 4.99902, 0.0918019, -10, -5, 0.0918199, -10, -5, 0.0918019, 10, -3.47103, -0.0918198, 10, 3.46907, -0.0918198, -10, -3.47103, -0.0918198, -10)
+
+[node name="Road_long2" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3575, 0.90818, -18.8852)
+mesh = SubResource("ArrayMesh_1h4ly")
+skeleton = NodePath("")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_hq4lx")

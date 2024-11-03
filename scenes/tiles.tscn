@@ -1,5 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8qrfdu12a76g"]
+[gd_scene load_steps=6 format=3 uid="uid://c8qrfdu12a76g"]
 
 [ext_resource type="PackedScene" uid="uid://gejdr0ok2b0h" path="res://textures/Industrial_exterior_v2.glb" id="1_m0eu3"]
+[ext_resource type="PackedScene" uid="uid://oty1q2syro1j" path="res://scenes/assets/road_long.tscn" id="2_3s3e3"]
+[ext_resource type="PackedScene" uid="uid://dspqcg6ldtjp7" path="res://scenes/buildings/puzzle_1_building.tscn" id="2_dqe4i"]
+[ext_resource type="PackedScene" uid="uid://i3x4vwgaxkj6" path="res://scenes/assets/wall_column.tscn" id="3_6ykjp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hq4lx"]
+points = PackedVector3Array(4.99902, 0.0918019, 10, 3.46907, -0.0918198, 10, 4.99902, 0.0918019, -10, -5, 0.0918199, -10, -5, 0.0918019, 10, -3.47103, -0.0918198, 10, 3.46907, -0.0918198, -10, -3.47103, -0.0918198, -10)
 
 [node name="Industrial_exterior_v2" instance=ExtResource("1_m0eu3")]
+
+[node name="puzzle1_building" parent="." index="1" instance=ExtResource("2_dqe4i")]
+
+[node name="Road_long" parent="." index="62"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3575, 0.90818, -18.8852)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Road_long" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road_long/StaticBody3D2" index="0"]
+shape = SubResource("ConvexPolygonShape3D_hq4lx")
+
+[node name="Road_long2" parent="." index="63" instance=ExtResource("2_3s3e3")]
+
+[node name="Wall_column2" parent="." index="70" instance=ExtResource("3_6ykjp")]

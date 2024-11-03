@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=3 uid="uid://djpo28msdyg0"]
+
+[ext_resource type="Script" path="res://scripts/puzzle_1.gd" id="1_6preu"]
+[ext_resource type="Texture2D" uid="uid://bm472pbnl3wk2" path="res://textures/Industrial_exterior_v2_Asphalt_1-4.png" id="2_wv2q5"]
+[ext_resource type="PackedScene" uid="uid://dspqcg6ldtjp7" path="res://scenes/buildings/puzzle_1_building.tscn" id="3_w6im7"]
+[ext_resource type="PackedScene" uid="uid://56e46bgrkinq" path="res://scenes/assets/internal_door.tscn" id="4_lrvkh"]
+[ext_resource type="PackedScene" uid="uid://dy6lq0h3ubs2h" path="res://scenes/ui.tscn" id="6_k7hft"]
+[ext_resource type="PackedScene" uid="uid://deewhbytfminu" path="res://scenes/scene_transition.tscn" id="6_t5si0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_krw0v"]
+sky_top_color = Color(0.753971, 0.30204, 0.392313, 1)
+sky_horizon_color = Color(0.937666, 0.519148, 0.464033, 1)
+sky_curve = 0.382368
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_6ephg"]
+sky_material = SubResource("ProceduralSkyMaterial_krw0v")
+
+[sub_resource type="Environment" id="Environment_7akqr"]
+background_mode = 2
+sky = SubResource("Sky_6ephg")
+ambient_light_source = 3
+ambient_light_color = Color(0.970946, 1.1792e-06, 1.15514e-06, 1)
+ambient_light_energy = 0.0
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_detail_spread = 0.901251
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6g13c"]
+albedo_texture = ExtResource("2_wv2q5")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6u46g"]
+size = Vector2(30, 30)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0iv5v"]
+points = PackedVector3Array(-15, 0, -15, -15, 0, 15, 15, 0, -15, 15, 0, 15)
+
+[node name="Puzzle1" type="Node3D"]
+script = ExtResource("1_6preu")
+
+[node name="SceneTransitionRect" parent="." instance=ExtResource("6_t5si0")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7akqr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.334565, 0.371573, 0, 0.743145, 0.66913, -0.5, 0.579484, -0.643582, 0, 0, 0)
+light_energy = 0.95
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+material_override = SubResource("StandardMaterial3D_6g13c")
+mesh = SubResource("PlaneMesh_6u46g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("ConvexPolygonShape3D_0iv5v")
+
+[node name="puzzle1_building" parent="." instance=ExtResource("3_w6im7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0706, 0.0124979, 1.0578)
+
+[node name="door" parent="." instance=ExtResource("4_lrvkh")]
+
+[node name="EntranceMarkers" type="Node3D" parent="."]
+
+[node name="any" type="Marker3D" parent="EntranceMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543661, 0.00692566, 9.88333)
+
+[node name="UI" parent="." instance=ExtResource("6_k7hft")]

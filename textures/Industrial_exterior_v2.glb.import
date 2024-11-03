@@ -113,6 +113,9 @@ _subresources={
 "PATH:Building_4": {
 "generate/physics": true
 },
+"PATH:Building_5": {
+"generate/physics": true
+},
 "PATH:Building_6": {
 "generate/physics": true
 },
@@ -123,6 +126,9 @@ _subresources={
 "generate/physics": true
 },
 "PATH:Building_9": {
+"generate/physics": true
+},
+"PATH:Cargo_1_open": {
 "generate/physics": true
 },
 "PATH:Cargo_2_empty": {
