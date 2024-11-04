@@ -1,16 +1,17 @@
-[gd_scene load_steps=29 format=4 uid="uid://djpo28msdyg0"]
+[gd_scene load_steps=36 format=4 uid="uid://djpo28msdyg0"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_1.gd" id="1_6preu"]
 [ext_resource type="Texture2D" uid="uid://bm472pbnl3wk2" path="res://textures/Industrial_exterior_v2_Asphalt_1-4.png" id="2_wv2q5"]
 [ext_resource type="PackedScene" uid="uid://dspqcg6ldtjp7" path="res://scenes/buildings/puzzle_1_building.tscn" id="3_w6im7"]
 [ext_resource type="PackedScene" uid="uid://56e46bgrkinq" path="res://scenes/assets/internal_door.tscn" id="4_lrvkh"]
-[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="6_k7hft"]
-[ext_resource type="PackedScene" path="res://scenes/scene_transition.tscn" id="6_t5si0"]
+[ext_resource type="PackedScene" uid="uid://dy6lq0h3ubs2h" path="res://scenes/ui.tscn" id="6_k7hft"]
+[ext_resource type="PackedScene" uid="uid://deewhbytfminu" path="res://scenes/scene_transition.tscn" id="6_t5si0"]
 [ext_resource type="Texture2D" uid="uid://cent6v77cugft" path="res://assets/chest_11mb_0.png" id="7_b6vag"]
 [ext_resource type="Texture2D" uid="uid://cfbkjh8xu05ht" path="res://assets/chest_11mb_1.png" id="8_7lgmx"]
 [ext_resource type="Texture2D" uid="uid://dahc74onwmj3m" path="res://assets/chest_11mb_2.png" id="9_u5b1r"]
 [ext_resource type="PackedScene" uid="uid://cja73at1h4mbp" path="res://scenes/grabbable/bags_1.tscn" id="10_nhw6p"]
 [ext_resource type="PackedScene" uid="uid://blkgggrptj3tj" path="res://scenes/grabbable/barrel.tscn" id="11_fjpq0"]
+[ext_resource type="Script" path="res://scripts/area_3d.gd" id="11_fs6nd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_krw0v"]
 sky_top_color = Color(0.753971, 0.30204, 0.392313, 1)
@@ -195,6 +196,24 @@ _data = {
 "abertura": SubResource("Animation_lawj6")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8f05"]
+transparency = 1
+blend_mode = 3
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0tugt"]
+material = SubResource("StandardMaterial3D_g8f05")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ff4jj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o3lb4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5l4hg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4rs4"]
+transparency = 1
+blend_mode = 3
+albedo_color = Color(0.981352, 0.953508, 0.949801, 1)
+
 [node name="Puzzle1" type="Node3D"]
 script = ExtResource("1_6preu")
 
@@ -209,6 +228,8 @@ light_energy = 0.95
 shadow_enabled = true
 
 [node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 7
+collision_mask = 7
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 material_override = SubResource("StandardMaterial3D_6g13c")
@@ -233,7 +254,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543661, 0.00692566, 9.88333
 [node name="UI" parent="." instance=ExtResource("6_k7hft")]
 
 [node name="chest" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.00503579, -6.38163e-21, -2.87402e-05, 3.7035e-27, 0.00503587, -1.11819e-18, 2.87402e-05, -1.11817e-18, -0.00503579, 6.99393, 0.648867, -9.09684)
+transform = Transform3D(-0.00503579, -6.38163e-21, -2.87402e-05, 3.7035e-27, 0.00503587, -1.11819e-18, 2.87402e-05, -1.11817e-18, -0.00503579, 6.9973, 0.643478, -9.07924)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="chest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29.5817, -43.142)
@@ -267,17 +288,37 @@ libraries = {
 "": SubResource("AnimationLibrary_tt4y6")
 }
 
+[node name="Teste_cilindro" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07706, 0.999846, -2.62407)
+script = ExtResource("11_fs6nd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teste_cilindro"]
+layers = 4
+mesh = SubResource("CylinderMesh_0tugt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teste_cilindro"]
+shape = SubResource("CylinderShape3D_ff4jj")
+
+[node name="Teste" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07706, 1.54053, -6.63847)
+script = ExtResource("11_fs6nd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teste"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("BoxShape3D_o3lb4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teste"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+layers = 4
+mesh = SubResource("BoxMesh_5l4hg")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_x4rs4")
+
 [node name="Bags_1" parent="." groups=["saveable_objects"] instance=ExtResource("10_nhw6p")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.5169, 0.197866, 2.50283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5169, 0.197866, 2.50283)
 
 [node name="Barrel" parent="." groups=["saveable_objects"] instance=ExtResource("11_fjpq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88038, 0.282304, 3.86367)
 
-[node name="Bag_target" parent="." groups=["saveable_objects"] instance=ExtResource("10_nhw6p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33666, 0.210541, -8.7458)
-
-[node name="Barrel2" parent="." groups=["saveable_objects"] instance=ExtResource("11_fjpq0")]
-transform = Transform3D(-0.0627557, -0.995722, -0.0678117, 0, 0.0679456, -0.997689, 0.998029, -0.0626107, -0.00426398, 0.784018, 3.075, -8.20487)
-
-[node name="Barrel" parent="Barrel2" groups=["saveable_objects"] instance=ExtResource("11_fjpq0")]
-transform = Transform3D(0.99583, -0.0619193, -0.0670084, -0.0704323, -0.0548761, -0.996007, 0.0579948, 0.996572, -0.0590084, 0.0734329, -0.403168, -0.617654)
+[connection signal="body_entered" from="Teste_cilindro" to="." method="_on_teste_cilindro_body_entered"]
+[connection signal="body_entered" from="Teste" to="." method="_on_teste_body_entered"]

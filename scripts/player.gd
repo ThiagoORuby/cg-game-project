@@ -64,9 +64,13 @@ func _physics_process(delta: float) -> void:
 func grab_object():
 	if raycast.is_colliding():
 		var target = raycast.get_collider()
+		if target.name.begins_with("teste"):
+			return
+			
 		if target is RigidBody3D:
 			grabbed_object = target
 			box_collision = grabbed_object.get_node("CollisionShape3D")
+			print(box_collision)
 			box_collision.get_child(0).apply_outline()
 			grabbed_object.freeze = true
 			grabbed_object.collision_mask = 0
