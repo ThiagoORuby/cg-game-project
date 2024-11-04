@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bm472pbnl3wk2" path="res://textures/Industrial_exterior_v2_Asphalt_1-4.png" id="2_xjskf"]
 [ext_resource type="MeshLibrary" uid="uid://d2nny8vd4iu6b" path="res://tiles.tres" id="3_5subw"]
 [ext_resource type="PackedScene" uid="uid://cgi8ba5levabi" path="res://assets/basicPerson.fbx" id="4_81l5f"]
-[ext_resource type="PackedScene" uid="uid://dy6lq0h3ubs2h" path="res://scenes/ui.tscn" id="5_55edh"]
+[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="5_55edh"]
 [ext_resource type="Script" path="res://scripts/ventilation.gd" id="7_wfddd"]
 [ext_resource type="AudioStream" uid="uid://fx23wrvtgll3" path="res://sounds/ventilation.mp3" id="8_1n5ho"]
 [ext_resource type="Texture2D" uid="uid://d4a268qy76q33" path="res://textures/Industrial_exterior_v2_Barrel_1.png" id="8_vsmoq"]
@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://i3x4vwgaxkj6" path="res://scenes/assets/wall_column.tscn" id="27_ujktp"]
 [ext_resource type="PackedScene" uid="uid://cmethh5rn7jb1" path="res://scenes/assets/external_door.tscn" id="29_qjmx5"]
 [ext_resource type="PackedScene" uid="uid://bynssfr4dlhhv" path="res://scenes/assets/old_door.tscn" id="30_5q5wa"]
-[ext_resource type="PackedScene" uid="uid://deewhbytfminu" path="res://scenes/scene_transition.tscn" id="30_70661"]
+[ext_resource type="PackedScene" path="res://scenes/scene_transition.tscn" id="30_70661"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_28lug"]
 sky_top_color = Color(0.753971, 0.30204, 0.392313, 1)
@@ -392,7 +392,7 @@ data = PackedVector3Array(1.12282, 2.77518, -1.12318, -1.05606, 2.77518, -1.0564
 albedo_texture = ExtResource("11_ukt80")
 
 [sub_resource type="PrismMesh" id="PrismMesh_b51j2"]
-lightmap_size_hint = Vector2i(25, 21)
+lightmap_size_hint = Vector2i(59, 21)
 flip_faces = true
 add_uv2 = true
 left_to_right = 0.0
@@ -1306,7 +1306,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 24.2074, -0.941632, 41.4498)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 30.5133, -0.941632, 49.3238)
 
 [node name="tree4" parent="Trees" instance=ExtResource("15_4ouwp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.9639, -0.941632, 48.9587)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.9639, -0.962539, 49.1392)
 
 [node name="tree3" parent="Trees" instance=ExtResource("15_4ouwp")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 30.3273, -0.941632, -13.2432)

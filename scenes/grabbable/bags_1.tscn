@@ -53,7 +53,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v71vx")
 
 [node name="Bags_1" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2363, 0.953615, -4.40773)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59087, 0.953615, -4.40773)
 collision_layer = 3
 collision_mask = 3
 mass = 10.0
