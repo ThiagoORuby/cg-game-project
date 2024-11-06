@@ -1,11 +1,23 @@
 class_name GlobalState extends Node
 
+var has_played_intro_cutscene = true
+var first_time_running = true
+
 var scene_states = {}
 var item_hash = {
 	"car_key": true,
 	"steering_wheel": true,
 	"gas": true,
 	"gate_key": true
+}
+
+var ordered_itens = []
+
+var completed_puzzle = {
+	"puzzle1": true,
+	"puzzle2": true,
+	"puzzle3": true,
+	"puzzle4": true
 }
 
 # Sinal emitido ao coletar um item
@@ -15,6 +27,7 @@ signal item_collected(item_name)
 func collect_item(item_name: String):
 	if item_hash.has(item_name):
 		item_hash[item_name] = true
+		ordered_itens.append(item_name)
 		emit_signal("item_collected", item_name)
 
 

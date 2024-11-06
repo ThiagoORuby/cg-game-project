@@ -11,7 +11,7 @@ var item_icons = {
 func _ready() -> void:
 	global_state.connect("item_collected", _on_item_collected)
 	
-	for item_name in global_state.item_hash.keys():
+	for item_name in global_state.ordered_itens:
 		if global_state.item_hash[item_name]:
 			add_item_to_inventory(item_name)
 

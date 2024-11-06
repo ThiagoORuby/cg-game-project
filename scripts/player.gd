@@ -7,7 +7,7 @@ const SENSITIVITY = 0.005
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-@onready var raycast = $Head/Camera3D/RayCast3D
+@onready var raycast: RayCast3D = $Head/Camera3D/RayCast3D
 @onready var holdPos = $Head/Camera3D/HoldPos
 
 var grabbed_object: RigidBody3D = null
@@ -22,7 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(80))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(80))
 
 func _physics_process(delta: float) -> void:
 	# Adiciona gravidade
@@ -64,9 +64,7 @@ func _physics_process(delta: float) -> void:
 func grab_object():
 	if raycast.is_colliding():
 		var target = raycast.get_collider()
-		if target.name.begins_with("teste"):
-			return
-			
+
 		if target is RigidBody3D:
 			grabbed_object = target
 			box_collision = grabbed_object.get_node("CollisionShape3D")
@@ -75,6 +73,10 @@ func grab_object():
 			grabbed_object.freeze = true
 			grabbed_object.collision_mask = 0
 			grabbed_object.collision_layer = 0
+		elif target is Item:
+			var item_name = target.item_name
+			global_state.collect_item(item_name)
+			target.queue_free()
 
 func drop_object():
 	if grabbed_object:

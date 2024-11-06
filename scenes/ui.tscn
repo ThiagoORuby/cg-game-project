@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy6lq0h3ubs2h"]
+[gd_scene load_steps=4 format=3 uid="uid://dy6lq0h3ubs2h"]
 
 [ext_resource type="Script" path="res://scripts/reticle.gd" id="1_0n4cg"]
 [ext_resource type="Script" path="res://scripts/inventary.gd" id="2_4rsix"]
+[ext_resource type="FontFile" uid="uid://dxps6c6w21bld" path="res://fonts/dpcomic.ttf" id="2_7kqi2"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -28,12 +29,18 @@ grow_vertical = 2
 script = ExtResource("1_0n4cg")
 
 [node name="BottomInfo" type="Label" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 530.0
-offset_top = 600.0
-offset_right = 711.0
-offset_bottom = 623.0
+offset_left = -2.0
+offset_top = 557.0
+offset_right = 1149.0
+offset_bottom = 609.0
+theme_override_colors/font_color = Color(0.813732, 0.764735, 0.377433, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7kqi2")
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Inventary" type="VBoxContainer" parent="."]
 layout_mode = 0

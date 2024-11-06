@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://e4gg2olgi60v"]
+[gd_scene load_steps=17 format=4 uid="uid://1y4m46v3tbbs"]
 
 [ext_resource type="Texture2D" uid="uid://cent6v77cugft" path="res://assets/chest_11mb_0.png" id="1_c2afp"]
 [ext_resource type="Texture2D" uid="uid://cfbkjh8xu05ht" path="res://assets/chest_11mb_1.png" id="2_bvthx"]
 [ext_resource type="Texture2D" uid="uid://dahc74onwmj3m" path="res://assets/chest_11mb_2.png" id="3_jpbv8"]
+[ext_resource type="Script" path="res://scripts/chest.gd" id="4_reagc"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kbq78"]
 points = PackedVector3Array(-2.2766, 55.4053, -140.45, -202.101, -72.0576, -132.499, -200.855, 79.2426, -132.499, -2.2766, 58.5246, -140.098, 2.23363, 55.4053, -140.45, -202.101, -74.0958, -132.255, -203.562, -73.4932, -132.255, -204.163, -72.0576, -132.255, 202.058, -72.0576, -132.499, -202.917, 79.2426, -132.255, -202.316, 80.6959, -132.255, -200.855, 81.2985, -132.255, 2.23363, 58.5246, -140.098, 200.812, 79.2426, -132.499, -215.288, -87.4057, -129.443, 202.058, -74.0958, -132.255, -215.288, 88.7421, -129.443, 204.12, -72.0576, -132.255, 203.519, -73.4932, -132.255, 200.812, 81.2985, -132.255, 202.273, 80.6959, -132.255, 202.831, 79.2426, -132.255, -215.288, -87.4057, 129.423, -217.522, -74.0958, -47.5263, -217.779, -72.0576, -47.5263, -219.412, 53.4913, -24.5659, 215.245, -87.4057, -129.443, -217.779, 79.7034, -47.5263, -217.522, 81.7415, -47.5263, -215.288, 88.7421, 129.423, -100.986, 93.6513, 128.314, 215.245, 88.7421, -129.443, -202.101, -74.0958, 132.425, -203.562, -73.4932, 132.425, -204.163, -72.0576, 132.425, -219.412, 53.4913, 27.8184, -217.779, -72.0576, 44.3964, -217.522, -74.0958, 44.3964, 215.245, -87.4057, 129.423, 219.412, 53.4913, -24.5659, 217.736, -72.0576, -47.5263, 217.479, -74.0958, -47.5263, -217.779, 79.7034, 44.3964, -217.522, 81.7415, 44.3964, -202.917, 79.2426, 132.425, -202.316, 80.6959, 132.425, -200.855, 81.2985, 132.425, -100.986, 89.8764, 135.805, -100.986, 92.2512, 134.453, -100.986, 93.6336, 132.1, 100.943, 93.6513, 128.314, 215.245, 88.7421, 129.423, 217.479, 81.7415, -47.5263, 217.736, 79.7034, -47.5263, -202.101, -72.0576, 132.695, 202.058, -74.0958, 132.425, 217.479, -74.0958, 44.3964, 217.736, -72.0576, 44.3964, 219.412, 53.4913, 27.8184, 204.12, -72.0576, 132.425, 203.519, -73.4932, 132.425, -200.855, 79.2426, 132.695, -100.986, 87.1647, 135.805, 100.943, 89.8764, 135.805, 100.943, 92.2512, 134.453, 100.943, 93.6336, 132.1, 217.736, 79.7034, 44.3964, 217.479, 81.7415, 44.3964, 200.812, 81.2985, 132.425, 202.273, 80.6959, 132.425, 202.831, 79.2426, 132.425, 202.058, -72.0576, 132.695, 200.812, 79.2426, 132.695, 100.943, 87.1647, 135.805)
@@ -121,6 +122,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7253y")
 
+[sub_resource type="Animation" id="Animation_4u6ey"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.00484542, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_lawj6"]
 resource_name = "abertura"
 length = 0.5
@@ -137,29 +153,16 @@ tracks/0/keys = {
 "values": [Vector3(0.00484542, 0, 0), Vector3(1.05204, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_4u6ey"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("head:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.00484542, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tt4y6"]
 _data = {
 "RESET": SubResource("Animation_4u6ey"),
 "abertura": SubResource("Animation_lawj6")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgijk"]
+
 [node name="chest" type="StaticBody3D"]
-transform = Transform3D(0.00503587, 0, 0, 0, 0.00503587, -1.11819e-18, 0, 1.11819e-18, 0.00503587, -1.76282, 0.648867, 2.47287)
+transform = Transform3D(0.00503587, 0, 0, 0, 0.00503587, -1.11819e-18, 0, 1.11819e-18, 0.00503587, -5.28219, 0.648867, 5.6067)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29.5817, -43.142)
@@ -192,3 +195,13 @@ skeleton = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_tt4y6")
 }
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(198.575, 0, 0, 0, 198.575, 4.40927e-14, 0, -4.40927e-14, 198.575, -18.7834, 20.9185, -193.245)
+script = ExtResource("4_reagc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_bgijk")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
