@@ -1,14 +1,14 @@
-[gd_scene load_steps=23 format=4 uid="uid://cjvbis4afept4"]
+[gd_scene load_steps=23 format=4 uid="uid://bmb7e5l0lectc"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_3.gd" id="1_cs88y"]
 [ext_resource type="Texture2D" uid="uid://bm472pbnl3wk2" path="res://textures/Industrial_exterior_v2_Asphalt_1-4.png" id="1_e171i"]
 [ext_resource type="PackedScene" uid="uid://deewhbytfminu" path="res://scenes/scene_transition.tscn" id="1_lhxhd"]
 [ext_resource type="PackedScene" uid="uid://dy6lq0h3ubs2h" path="res://scenes/ui.tscn" id="3_40od3"]
-[ext_resource type="PackedScene" uid="uid://dg6sn6116jxvv" path="res://scenes/buildings/puzzle_3_building.tscn" id="3_dr31t"]
+[ext_resource type="PackedScene" path="res://scenes/buildings/puzzle_3_building.tscn" id="3_dr31t"]
 [ext_resource type="PackedScene" uid="uid://56e46bgrkinq" path="res://scenes/assets/internal_door.tscn" id="5_2o6hg"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="5_l2hqs"]
 [ext_resource type="Texture2D" uid="uid://qjodes57a7gw" path="res://assets/Key With Tag_texture_k1.png" id="5_vx0lq"]
-[ext_resource type="PackedScene" uid="uid://1y4m46v3tbbs" path="res://scenes/assets/chest.tscn" id="8_c4mqu"]
+[ext_resource type="PackedScene" uid="uid://e4gg2olgi60v" path="res://scenes/assets/chest.tscn" id="8_c4mqu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q3810"]
 sky_top_color = Color(0.753971, 0.30204, 0.392313, 1)
