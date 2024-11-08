@@ -1324,11 +1324,11 @@ theme_override_colors/font_color = Color(0.815686, 0.764706, 0.376471, 1)
 [node name="IntroCutscene" type="Node3D" parent="."]
 
 [node name="CutsceneCamera1" type="Camera3D" parent="IntroCutscene"]
-transform = Transform3D(-0.639983, 0.183407, -0.746179, -0.0846388, 0.94836, 0.305696, 0.763713, 0.258796, -0.591411, -31.6266, 14.1848, 9.18044)
+transform = Transform3D(-0.639983, 0.183408, -0.746179, -0.0846388, 0.94836, 0.305696, 0.763713, 0.258796, -0.591411, -31.6266, 14.1848, 9.18044)
 current = true
 
 [node name="CutsceneCamera2" type="Camera3D" parent="IntroCutscene"]
-transform = Transform3D(0.992332, -0.0638441, 0.105836, 0, 0.856267, 0.516533, -0.123601, -0.512572, 0.849701, 5.371, 10.883, 54.76)
+transform = Transform3D(0.992332, -0.063844, 0.105836, 0, 0.856267, 0.516533, -0.123601, -0.512572, 0.849701, 5.371, 10.883, 54.76)
 current = true
 
 [node name="IntroAnimation" type="AnimationPlayer" parent="IntroCutscene"]

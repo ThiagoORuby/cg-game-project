@@ -1,6 +1,5 @@
 class_name Player extends CharacterBody3D
 
-
 const SPEED = 5.0
 const JUMP_VELOCITY = 5.5
 const SENSITIVITY = 0.005
@@ -64,13 +63,7 @@ func _physics_process(delta: float) -> void:
 func grab_object():
 	if raycast.is_colliding():
 		var target = raycast.get_collider()
-<<<<<<< HEAD
-
-=======
-		if target.name.begins_with("teste"):
-			return
-			
->>>>>>> e4f7da9 (avanços no puzzle 1)
+		
 		if target is RigidBody3D:
 			grabbed_object = target
 			box_collision = grabbed_object.get_node("CollisionShape3D")
