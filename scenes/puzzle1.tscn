@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://e4gg2olgi60v" path="res://scenes/assets/chest.tscn" id="8_t41xx"]
 [ext_resource type="PackedScene" uid="uid://cja73at1h4mbp" path="res://scenes/grabbable/bags_1.tscn" id="10_nhw6p"]
 [ext_resource type="PackedScene" uid="uid://blkgggrptj3tj" path="res://scenes/grabbable/barrel.tscn" id="11_fjpq0"]
-[ext_resource type="Script" path="res://scripts/area_3d.gd" id="11_fs6nd"]
+[ext_resource type="Script" path="res://scripts/shadow.gd" id="11_fs6nd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_krw0v"]
 sky_top_color = Color(0.753971, 0.30204, 0.392313, 1)
@@ -48,8 +48,10 @@ blend_mode = 3
 material = SubResource("StandardMaterial3D_g8f05")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ff4jj"]
+height = 1.39527
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o3lb4"]
+size = Vector3(4.95, 3.97, 2.784)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5l4hg"]
 
@@ -79,9 +81,6 @@ collision_mask = 7
 material_override = SubResource("StandardMaterial3D_6g13c")
 mesh = SubResource("PlaneMesh_6u46g")
 
-[node name="Barrel" parent="Ground/MeshInstance3D" groups=["saveable_objects"] instance=ExtResource("11_fjpq0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88038, 0.282304, 0.752085)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("ConvexPolygonShape3D_0iv5v")
 
@@ -97,40 +96,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543661, 0.00692566, 9.88333
 
 [node name="UI" parent="." instance=ExtResource("6_k7hft")]
 
-[node name="Teste_cilindro" type="Area3D" parent="."]
+[node name="shadow_cilinder" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07706, 0.999846, -2.62407)
 script = ExtResource("11_fs6nd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Teste_cilindro"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="shadow_cilinder"]
 transform = Transform3D(1, 0, 0, 0, 0.802, 0, 0, 0, 1.022, -1.7315, 4.49644, -4.38923)
 layers = 4
 mesh = SubResource("CylinderMesh_0tugt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Teste_cilindro"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shadow_cilinder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69963, 4.58524, -4.31538)
 shape = SubResource("CylinderShape3D_ff4jj")
 
-[node name="Teste_cilindro2" type="Area3D" parent="."]
+[node name="shadow_cilinder2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15412, 1.99969, -0.51275)
 script = ExtResource("11_fs6nd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Teste_cilindro2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="shadow_cilinder2"]
 transform = Transform3D(0.00066969, -0.0497125, 1.02003, 0.999942, 0.00866427, 0, -0.0107826, 0.800411, 0.063353, -0.502658, 3.14761, -6.88288)
 layers = 4
 mesh = SubResource("CylinderMesh_0tugt")
-skeleton = NodePath("../../Teste_cilindro2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Teste_cilindro2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shadow_cilinder2"]
+transform = Transform3D(1, 0, 0, 0, -0.0229316, -0.999737, 0, 0.999737, -0.0229316, -0.504291, 3.18535, -6.94722)
 shape = SubResource("CylinderShape3D_ff4jj")
 
-[node name="Teste" type="Area3D" parent="."]
+[node name="shadow_rectangle" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07706, 1.54053, -6.63847)
 script = ExtResource("11_fs6nd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Teste"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shadow_rectangle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.488941, 1.06116, -1.28189)
 shape = SubResource("BoxShape3D_o3lb4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Teste"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="shadow_rectangle"]
 transform = Transform3D(5, 0, 0, 0, 4.597, 0, 0, 0, 2.84, -0.484624, 0.827509, -1.29835)
 layers = 4
 mesh = SubResource("BoxMesh_5l4hg")
@@ -143,9 +143,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5169, 0.197866, 2.50283)
 [node name="Barrel" parent="." groups=["saveable_objects"] instance=ExtResource("11_fjpq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88038, 0.282304, 3.86367)
 
+[node name="Barrel2" parent="." groups=["saveable_objects"] instance=ExtResource("11_fjpq0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.93208, 0.282304, 0.752085)
+
 [node name="chest" parent="." instance=ExtResource("8_t41xx")]
 transform = Transform3D(-0.00503387, 3.14947e-20, 0.000141839, 0, 0.00503587, -1.11819e-18, -0.000141839, -1.11775e-18, -0.00503387, 6.81171, 0.648867, -8.22836)
 
-[connection signal="body_entered" from="Teste_cilindro" to="." method="_on_teste_cilindro_body_entered"]
-[connection signal="body_entered" from="Teste_cilindro2" to="." method="_on_teste_cilindro_body_entered"]
-[connection signal="body_entered" from="Teste" to="." method="_on_teste_body_entered"]
+[connection signal="body_entered" from="shadow_cilinder" to="shadow_cilinder" method="_on_body_entered"]
+[connection signal="body_exited" from="shadow_cilinder" to="shadow_cilinder" method="_on_body_exited"]
+[connection signal="body_entered" from="shadow_cilinder2" to="shadow_cilinder2" method="_on_body_entered"]
+[connection signal="body_exited" from="shadow_cilinder2" to="shadow_cilinder2" method="_on_body_exited"]
+[connection signal="body_entered" from="shadow_rectangle" to="shadow_rectangle" method="_on_body_entered"]
+[connection signal="body_exited" from="shadow_rectangle" to="shadow_rectangle" method="_on_body_exited"]

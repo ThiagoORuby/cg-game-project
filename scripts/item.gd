@@ -4,7 +4,7 @@ class_name Item extends StaticBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(item_name)
+	#print(item_name)
 	pass # Replace with function body.
 
 
