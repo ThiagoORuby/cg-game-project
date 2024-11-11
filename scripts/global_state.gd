@@ -14,10 +14,10 @@ var item_hash = {
 var ordered_itens = []
 
 var completed_puzzle = {
-	"puzzle1": true,
-	"puzzle2": true,
-	"puzzle3": true,
-	"puzzle4": true
+	"puzzle1": false,
+	"puzzle2": false,
+	"puzzle3": false,
+	"puzzle4": false
 }
 
 # Sinal emitido ao coletar um item

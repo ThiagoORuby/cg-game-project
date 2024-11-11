@@ -8,6 +8,7 @@ extends BaseScene
 var next_car: bool = false
 
 func _ready() -> void:
+	print(global_state.completed_puzzle)
 	super()
 	
 	if not global_state.has_played_intro_cutscene:
