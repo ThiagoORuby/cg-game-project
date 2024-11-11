@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dmdflupl8ajex"]
+[gd_scene load_steps=26 format=4 uid="uid://dmdflupl8ajex"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_2.gd" id="1_56kob"]
 [ext_resource type="PackedScene" uid="uid://deewhbytfminu" path="res://scenes/scene_transition.tscn" id="1_cnjnx"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://e4gg2olgi60v" path="res://scenes/assets/chest.tscn" id="7_6jkj6"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="8_3kqrn"]
 [ext_resource type="Texture2D" uid="uid://x67ooo1uga23" path="res://assets/Military_Gas_Can_AlbedoTransparency.png" id="8_6rbc5"]
+[ext_resource type="PackedScene" uid="uid://blkgggrptj3tj" path="res://scenes/grabbable/barrel.tscn" id="10_pi5ye"]
+[ext_resource type="PackedScene" uid="uid://cja73at1h4mbp" path="res://scenes/grabbable/bags_1.tscn" id="11_u87eq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mapsm"]
 sky_top_color = Color(0.753971, 0.30204, 0.392313, 1)
@@ -182,3 +184,24 @@ libraries = {
 "": SubResource("AnimationLibrary_hb2b1")
 }
 autoplay = "rotation"
+
+[node name="Barrel" parent="." groups=["saveable_objects"] instance=ExtResource("10_pi5ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.58517, -0.0310951, -6.12194)
+
+[node name="Barrel2" parent="." groups=["saveable_objects"] instance=ExtResource("10_pi5ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.92327, -0.0137638, -6.07324)
+
+[node name="Barrel3" parent="." groups=["saveable_objects"] instance=ExtResource("10_pi5ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2954, -0.0191952, -6.05293)
+
+[node name="Barrel4" parent="." groups=["saveable_objects"] instance=ExtResource("10_pi5ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20018, 1.00355, -6.05674)
+
+[node name="Barrel5" parent="." groups=["saveable_objects"] instance=ExtResource("10_pi5ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.52031, 0.974071, -6.0947)
+
+[node name="Barrel6" parent="." groups=["saveable_objects"] instance=ExtResource("10_pi5ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8861, 1.99579, -6.05904)
+
+[node name="Bags_1" parent="." groups=["saveable_objects"] instance=ExtResource("11_u87eq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1442, 0.12252, 5.41697)
