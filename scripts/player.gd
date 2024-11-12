@@ -90,13 +90,17 @@ func drop_object():
 func apply_transformations():
 	if Input.is_action_pressed("increase"):
 		box_collision.scale *= 1.05
+		grabbed_object.mass *= 1.05
 	
 	if Input.is_action_pressed("decrease"):
 		box_collision.scale /= 1.05
+		grabbed_object.mass /= 1.05
 	
 	box_collision.scale = clamp(box_collision.scale, 
 				Vector3(0.5, 0.5, 0.5), 
-				Vector3(10, 10, 10))
+				Vector3(3, 3, 3))
+				
+	grabbed_object.mass = clamp(grabbed_object.mass, 1, 20)
 				
 	if Input.is_action_pressed("clockwise"):
 		grabbed_object.rotate_x(-0.05)

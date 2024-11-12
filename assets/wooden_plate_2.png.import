@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dlllp1uem8lh0"
+path.s3tc="res://.godot/imported/wooden_plate_2.png-c36b76fa32d8cc086c8af56d94ad0cd9.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "cc4da5d527bf1f877fa38be9e2f26483"
+}
+
+[deps]
+
+source_file="res://assets/wooden_plate_2.png"
+dest_files=["res://.godot/imported/wooden_plate_2.png-c36b76fa32d8cc086c8af56d94ad0cd9.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/wooden_plate_2.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

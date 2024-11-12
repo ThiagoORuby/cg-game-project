@@ -2,6 +2,17 @@ class_name GlobalState extends Node
 
 var has_played_intro_cutscene = true
 var first_time_running = true
+var plate_max_mass = {
+	"Plate1" : 15,
+	"Plate2" : 25,
+	"Plate3" : 20
+}
+var plate_status = {
+	"Plate1" : false,
+	"Plate2" : false,
+	"Plate3" : false
+}
+
 
 var scene_states = {}
 var item_hash = {

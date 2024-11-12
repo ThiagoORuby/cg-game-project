@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dmdflupl8ajex"]
+[gd_scene load_steps=33 format=4 uid="uid://dmdflupl8ajex"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_2.gd" id="1_56kob"]
 [ext_resource type="PackedScene" uid="uid://deewhbytfminu" path="res://scenes/scene_transition.tscn" id="1_cnjnx"]
@@ -10,7 +10,9 @@
 [ext_resource type="Script" path="res://scripts/item.gd" id="8_3kqrn"]
 [ext_resource type="Texture2D" uid="uid://x67ooo1uga23" path="res://assets/Military_Gas_Can_AlbedoTransparency.png" id="8_6rbc5"]
 [ext_resource type="PackedScene" uid="uid://blkgggrptj3tj" path="res://scenes/grabbable/barrel.tscn" id="10_pi5ye"]
-[ext_resource type="PackedScene" uid="uid://cja73at1h4mbp" path="res://scenes/grabbable/bags_1.tscn" id="11_u87eq"]
+[ext_resource type="PackedScene" uid="uid://drmkq65l5ka7u" path="res://scenes/grabbable/box_wood.tscn" id="11_d5js1"]
+[ext_resource type="PackedScene" uid="uid://dw477wodhbv64" path="res://scenes/assets/plate.tscn" id="12_ahmil"]
+[ext_resource type="PackedScene" uid="uid://dggeh8t2wt1hl" path="res://scenes/grabbable/palet_single.tscn" id="12_dn3g0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mapsm"]
 sky_top_color = Color(0.753971, 0.30204, 0.392313, 1)
@@ -126,6 +128,98 @@ _data = {
 "rotation": SubResource("Animation_485p3")
 }
 
+[sub_resource type="Animation" id="Animation_fcsww"]
+resource_name = "down_Plate1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plate1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(95.1379, 0, 71.2586), Vector3(95.1379, -34.09, 71.2586)]
+}
+
+[sub_resource type="Animation" id="Animation_tlsoh"]
+resource_name = "down_Plate2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plate2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -34.09, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kn6sy"]
+resource_name = "down_Plate3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plate3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(9.5184, 0, 150.618), Vector3(9.518, -34.09, 150.618)]
+}
+
+[sub_resource type="Animation" id="Animation_gajq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plate1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(95.1379, 0, 71.2586)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plate2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Plate3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(9.5184, 0, 150.618)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1xcu0"]
+_data = {
+"RESET": SubResource("Animation_gajq6"),
+"down_Plate1": SubResource("Animation_fcsww"),
+"down_Plate2": SubResource("Animation_tlsoh"),
+"down_Plate3": SubResource("Animation_kn6sy")
+}
+
 [node name="Puzzle2" type="Node3D"]
 script = ExtResource("1_56kob")
 
@@ -203,5 +297,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.52031, 0.974071, -6.0947)
 [node name="Barrel6" parent="." groups=["saveable_objects"] instance=ExtResource("10_pi5ye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8861, 1.99579, -6.05904)
 
-[node name="Bags_1" parent="." groups=["saveable_objects"] instance=ExtResource("11_u87eq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1442, 0.12252, 5.41697)
+[node name="Box_wood5" parent="." groups=["saveable_objects"] instance=ExtResource("11_d5js1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0236, 1.15227, 5.70929)
+
+[node name="Box_wood6" parent="." groups=["saveable_objects"] instance=ExtResource("11_d5js1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.98297, 0.286555, 5.71318)
+
+[node name="Box_wood4" parent="." groups=["saveable_objects"] instance=ExtResource("11_d5js1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0021, 1.13596, 5.59201)
+
+[node name="Box_wood3" parent="." groups=["saveable_objects"] instance=ExtResource("11_d5js1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9614, 0.270248, 5.59589)
+
+[node name="Palet_single3" parent="." groups=["saveable_objects"] instance=ExtResource("12_dn3g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29757, 1.0209, -5.01055)
+
+[node name="Palet_single2" parent="." groups=["saveable_objects"] instance=ExtResource("12_dn3g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32927, 0.626455, -5.19846)
+
+[node name="Palet_single" parent="." groups=["saveable_objects"] instance=ExtResource("12_dn3g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25945, 0.310112, -4.96785)
+
+[node name="Plates" type="Node3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 4.67921, 1.88417, -3.48596)
+
+[node name="Plate3" parent="Plates" instance=ExtResource("12_ahmil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5184, 0, 150.618)
+
+[node name="Plate2" parent="Plates" instance=ExtResource("12_ahmil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Plate1" parent="Plates" instance=ExtResource("12_ahmil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.1379, 0, 71.2586)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Plates"]
+libraries = {
+"": SubResource("AnimationLibrary_1xcu0")
+}
