@@ -10,12 +10,15 @@ var objs = {
 @onready var cilindro = $shadow_cilinder
 @onready var cilindro_2 = $shadow_cilinder2
 
+@onready var ui_anim = $UI/AnimationPlayer
 @onready var item = $steering_wheel
 
 func _ready() -> void:
 	super()
 	if global_state.completed_puzzle["puzzle1"]:
 		item.visible = false
+	else:
+		ui_anim.play("puzzle1")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

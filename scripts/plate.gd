@@ -12,13 +12,13 @@ func sum (objects: Dictionary):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	label.text = "0/" + str(global_state.plate_max_mass[get_parent().name])
+	label.text = "0/" + str(global_state.plate_max_mass[get_parent().name]) + "kg"
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	label.text = str(roundi(sum(objects))) + "/" + str(global_state.plate_max_mass[get_parent().name])
+	label.text = str(roundi(sum(objects))) + "/" + str(global_state.plate_max_mass[get_parent().name]) + "kg"
 	if sum(objects) >= global_state.plate_max_mass[get_parent().name]:
 		if not global_state.plate_status[get_parent().name]:
 			global_state.plate_status[get_parent().name] = true

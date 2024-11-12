@@ -1,11 +1,14 @@
 extends BaseScene
 
 @onready var item = $gas
+@onready var ui_anim = $UI/AnimationPlayer
 
 func _ready() -> void:
 	super()
 	if global_state.completed_puzzle["puzzle2"]:
 		item.visible = false
+	else:
+		ui_anim.play("puzzle2")
 
 func check_plates ():
 	for key in global_state.plate_status:

@@ -325,6 +325,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543661, 0.00692566, 9.88333
 
 [node name="UI" parent="." instance=ExtResource("6_k7hft")]
 
+[node name="TopInfo" parent="UI" index="1"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1151.0
+offset_bottom = 52.0
+
 [node name="shadow_cilinder" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07706, 0.999846, -2.62407)
 
@@ -427,3 +434,5 @@ libraries = {
 "": SubResource("AnimationLibrary_y44dq")
 }
 autoplay = "rotate"
+
+[editable path="UI"]
