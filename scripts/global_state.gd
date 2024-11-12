@@ -2,6 +2,7 @@ class_name GlobalState extends Node
 
 var has_played_intro_cutscene = false
 var first_time_running = true
+var first_time_text = true
 var plate_max_mass = {
 	"Plate1" : 15,
 	"Plate2" : 25,

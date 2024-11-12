@@ -3,7 +3,7 @@ extends BaseScene
 @onready var intro_animation: AnimationPlayer = $"IntroCutscene/IntroAnimation"
 @onready var player_scene = preload("res://scenes/player.tscn")
 @onready var player_initial_pos: Marker3D = $"EntranceMarkers/player_pos"
-
+@onready var ui_anim = $"UI/AnimationPlayer"
 @onready var info_label: Label = $"UI/BottomInfo"
 var next_car: bool = false
 
@@ -15,8 +15,10 @@ func _ready() -> void:
 		intro_animation.play("intro")
 		global_state.has_played_intro_cutscene = true
 		global_state.first_time_running = false
+		#ui_anim.queue("introduction")
 	else:
 		if global_state.first_time_running:
+			ui_anim.play("introduction")
 			set_player()
 			global_state.first_time_running = false
 	var state_data = global_state.load_scene_state(get_name())
@@ -52,6 +54,10 @@ func set_player():
 func _on_intro_animation_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "intro":
 		set_player()
+		if global_state.first_time_text:
+			ui_anim.play("introduction")
+			global_state.first_time_text = false
+		
 
 func all(values):
 	for value in values:

@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 scene_manager="*res://scripts/scene_manager.gd"
 global_state="*res://scripts/global_state.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="SuperLiminal Like"
