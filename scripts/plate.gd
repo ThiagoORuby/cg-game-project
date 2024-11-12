@@ -19,7 +19,6 @@ func _process(delta: float) -> void:
 	if sum(objects) >= global_state.plate_max_mass[get_parent().name]:
 		if not global_state.plate_status[get_parent().name]:
 			global_state.plate_status[get_parent().name] = true
-			print("deu certo!!", get_parent().name)
 			animation.play("down_" + get_parent().name)
 	pass
 

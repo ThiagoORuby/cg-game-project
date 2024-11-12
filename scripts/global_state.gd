@@ -13,6 +13,12 @@ var plate_status = {
 	"Plate3" : false
 }
 
+var eletronic_balance_association_with_platforms = {
+	"eletronic_balance1" : "Plataform1",
+	"eletronic_balance2" : "Plataform2",
+	"eletronic_balance3" : "Plataform3"
+}
+
 
 var scene_states = {}
 var item_hash = {

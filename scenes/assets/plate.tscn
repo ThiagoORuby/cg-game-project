@@ -58,6 +58,9 @@ radius = 14.549
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vvvx1"]
 radius = 29.472
 
+[sub_resource type="Animation" id="Animation_ki15y"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_k846a"]
 resource_name = "down"
 tracks/0/type = "value"
@@ -72,9 +75,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, -1, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_ki15y"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r0pej"]
 _data = {
