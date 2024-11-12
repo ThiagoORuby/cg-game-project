@@ -76,7 +76,17 @@ func grab_object():
 			var item_name = target.item_name
 			global_state.collect_item(item_name)
 			target.queue_free()
-
+		elif target is SpotlightButton:
+			print(target.button_code)
+			var button_name = target.button_code
+			var spotlight_codes = global_state.spotlight_button_map.get(button_name)
+			if spotlight_codes:
+				for code in spotlight_codes:
+					var scode = "s" + str(code)
+					var last = global_state.spotlight_map[scode]
+					global_state.spotlight_map[scode] = not last
+			
+			
 func drop_object():
 	if grabbed_object:
 		grabbed_object.collision_mask = 1

@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://cuwva865x7yjq"]
+[gd_scene load_steps=19 format=4 uid="uid://dgyfhcqq6n4wi"]
 
 [ext_resource type="Texture2D" uid="uid://dfex84alxirh" path="res://assets/spotlight_0.png" id="1_3afjk"]
+[ext_resource type="Script" path="res://scripts/spotlight.gd" id="1_led32"]
 [ext_resource type="Texture2D" uid="uid://ck2pd3vcw74c8" path="res://assets/spotlight_1.png" id="2_ldcgl"]
 [ext_resource type="Texture2D" uid="uid://dxhab1krir1ob" path="res://assets/spotlight_2.png" id="3_kbf0x"]
 [ext_resource type="Texture2D" uid="uid://d1fhqxgfgcffv" path="res://assets/spotlight_3.png" id="4_6nydl"]
@@ -134,7 +135,18 @@ shadow_mesh = SubResource("ArrayMesh_0jrub")
 [sub_resource type="BoxShape3D" id="BoxShape3D_vc8i8"]
 size = Vector3(0.7, 0.7, 0.7)
 
+[sub_resource type="PrismMesh" id="PrismMesh_b51j2"]
+lightmap_size_hint = Vector2i(59, 21)
+flip_faces = true
+add_uv2 = true
+left_to_right = 0.0
+size = Vector3(10, 1, 1)
+
+[sub_resource type="MeshTexture" id="MeshTexture_ffpdt"]
+mesh = SubResource("PrismMesh_b51j2")
+
 [node name="Spotlight" type="StaticBody3D"]
+script = ExtResource("1_led32")
 
 [node name="Sketchfab_Scene" type="Node3D" parent="."]
 
@@ -160,11 +172,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64.6026, 0.148433)
 mesh = SubResource("ArrayMesh_2tpst")
 skeleton = NodePath("")
 
-[node name="Cylinder_003_MAT_Lightbeam_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/Spotlight_Scene_fbx/RootNode/Cylinder_003"]
-visible = false
+[node name="light" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, -2.22045e-18, 0, 2.22045e-18, 0.01, 0, 0.646026, 0.00148433)
 mesh = SubResource("ArrayMesh_6b1mo")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621202, 0.0980414)
 shape = SubResource("BoxShape3D_vc8i8")
+
+[node name="spotlight" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.991476, 0.128446, -0.0218565, 0.0982649, 0.847315, 0.521921, 0.0855582, 0.515324, -0.852714, 0.0254616, 0.790175, 0.528826)
+light_energy = 11.077
+light_indirect_energy = 2.001
+light_volumetric_fog_energy = 5.189
+light_projector = SubResource("MeshTexture_ffpdt")
+light_size = 0.148
+light_specular = 1.555
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 1.02
+shadow_transmittance_bias = 3.077
+shadow_blur = 1.375
+distance_fade_begin = 41.95
+distance_fade_shadow = 0.0
+distance_fade_length = 0.0
+spot_range = 5.331
+spot_attenuation = -0.18
+spot_angle = 12.28
+spot_angle_attenuation = 1.93187

@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cmethh5rn7jb1" path="res://scenes/assets/external_door.tscn" id="29_qjmx5"]
 [ext_resource type="PackedScene" uid="uid://bynssfr4dlhhv" path="res://scenes/assets/old_door.tscn" id="30_5q5wa"]
 [ext_resource type="PackedScene" uid="uid://deewhbytfminu" path="res://scenes/scene_transition.tscn" id="30_70661"]
-[ext_resource type="PackedScene" uid="uid://c3kiuafasb8h0" path="res://scenes/assets/street_light.tscn" id="34_t4bgq"]
+[ext_resource type="PackedScene" path="res://scenes/assets/street_light.tscn" id="34_t4bgq"]
 
 [sub_resource type="Animation" id="Animation_jg8re"]
 length = 0.001
@@ -919,7 +919,7 @@ point_count = 4
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4q7kq"]
 albedo_texture = ExtResource("11_ukt80")
 
-[sub_resource type="PrismMesh" id="PrismMesh_b51j2"]
+[sub_resource type="PrismMesh" id="PrismMesh_xwchv"]
 lightmap_size_hint = Vector2i(59, 21)
 flip_faces = true
 add_uv2 = true
@@ -927,7 +927,7 @@ left_to_right = 0.0
 size = Vector3(10, 1, 1)
 
 [sub_resource type="MeshTexture" id="MeshTexture_iwiov"]
-mesh = SubResource("PrismMesh_b51j2")
+mesh = SubResource("PrismMesh_xwchv")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1puou"]
 points = PackedVector3Array(1.38307, 1.44258, 0.82592, 1.1948, 1.26909, 3.07996, 1.11718, -0.00457669, -1.87203, -0.915774, 2.12575, -1.67437, -1.1916, 0.010847, 1.88007, -1.16418, 0.501776, -3.01781, 1.1948, 1.68379, -3.14106, -1.1896, 1.26909, 3.07996, 1.12748, -0.0144292, 1.92601, 0.88406, 2.08268, 0.43339, -1.1896, 1.68379, -3.14106, 1.29872, 0.958231, -3.34895, -1.1916, 0.010847, -1.84539, 0.754608, 0.560675, 3.1781, -1.37927, 1.44296, 0.826789, -0.878717, 2.08282, 0.433453, 0.921178, 2.12566, -1.67425, -1.11786, 0.477129, 2.99048, 1.16936, 0.501786, -3.01775, 1.11819, 0.479672, 2.97734, -0.994779, 2.01163, 0.538477, 0.999849, 2.01151, 0.538403, -0.722741, 0.48138, 3.06549, -1.0088, 2.02498, -1.76465, 1.01036, 2.02152, -1.75841, 0.631265, 0.48138, 3.06549, -1.1916, 0.201995, 2.16678)
@@ -1155,7 +1155,13 @@ color = Color(0, 0, 0, 1)
 
 [node name="UI" parent="." instance=ExtResource("5_55edh")]
 
-[node name="BottomInfo" parent="UI" index="1"]
+[node name="TopInfo" parent="UI" index="1"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1151.0
+offset_bottom = 52.0
+
+[node name="BottomInfo" parent="UI" index="2"]
 offset_left = 192.0
 offset_right = 969.0
 theme_override_colors/font_color = Color(0.815686, 0.764706, 0.376471, 1)
@@ -2040,7 +2046,7 @@ transform = Transform3D(-0.991522, 0, -0.129938, 0, 1, 0, 0.129938, 0, -0.991522
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75687, -1, -66.5645)
 
 [node name="puzzle4" type="Marker3D" parent="EntranceMarkers"]
-transform = Transform3D(0.960342, 0, -0.278823, 0, 1, 0, 0.278823, 0, 0.960342, -41.0401, 0, -67.5908)
+transform = Transform3D(0.960342, 0, -0.278823, 0, 1, 0, 0.278823, 0, 0.960342, -29.9479, 0, -74.6559)
 
 [node name="player_pos" type="Marker3D" parent="EntranceMarkers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7156, -0.299192, -40.661)
@@ -2061,7 +2067,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08168, 0.567847, -43.4888)
 internal_scene_path = "puzzle3"
 
 [node name="door4" parent="Doors" instance=ExtResource("29_qjmx5")]
-transform = Transform3D(0.0857647, 0, 0.996315, 0, 1, 0, -0.996315, 0, 0.0857647, -31.6656, 0.435548, -44.6245)
+transform = Transform3D(-0.982153, 0, -0.188084, 0, 1, 0, 0.188084, 0, -0.982153, -23.8949, 0.435548, -50.9901)
 internal_scene_path = "puzzle4"
 
 [node name="Light" type="Node3D" parent="."]

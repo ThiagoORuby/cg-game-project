@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://x67ooo1uga23" path="res://assets/Military_Gas_Can_AlbedoTransparency.png" id="8_6rbc5"]
 [ext_resource type="PackedScene" uid="uid://blkgggrptj3tj" path="res://scenes/grabbable/barrel.tscn" id="10_pi5ye"]
 [ext_resource type="PackedScene" uid="uid://drmkq65l5ka7u" path="res://scenes/grabbable/box_wood.tscn" id="11_d5js1"]
-[ext_resource type="PackedScene" uid="uid://dw477wodhbv64" path="res://scenes/assets/plate.tscn" id="12_ahmil"]
+[ext_resource type="PackedScene" path="res://scenes/assets/plate.tscn" id="12_ahmil"]
 [ext_resource type="PackedScene" uid="uid://dggeh8t2wt1hl" path="res://scenes/grabbable/palet_single.tscn" id="12_dn3g0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mapsm"]

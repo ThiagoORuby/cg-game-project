@@ -1,8 +1,47 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy6lq0h3ubs2h"]
+[gd_scene load_steps=10 format=3 uid="uid://dy6lq0h3ubs2h"]
 
 [ext_resource type="Script" path="res://scripts/reticle.gd" id="1_0n4cg"]
 [ext_resource type="Script" path="res://scripts/inventary.gd" id="2_4rsix"]
 [ext_resource type="FontFile" uid="uid://dxps6c6w21bld" path="res://fonts/dpcomic.ttf" id="2_7kqi2"]
+
+[sub_resource type="Animation" id="Animation_84egh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopInfo:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopInfo:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.813732, 0.764735, 0.377433, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopInfo:theme_override_colors/font_shadow_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_jg5tn"]
 resource_name = "puzzle1"
@@ -44,45 +83,6 @@ tracks/2/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.815686, 0.764706, 0.376471, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_84egh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TopInfo:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TopInfo:theme_override_colors/font_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.813732, 0.764735, 0.377433, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TopInfo:theme_override_colors/font_shadow_color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_tdou3"]
 resource_name = "puzzle2"
 length = 4.0
@@ -96,7 +96,87 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["", "As plataformas tem pesos especificos, então chegue até eles.", "Parece que aqui você apenas precisa preencher as sombras ..."]
+"values": ["", "As plataformas tem pesos especificos, então chegue até eles.", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopInfo:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 3.1, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.815686, 0.764706, 0.376471, 0), Color(0.813732, 0.764735, 0.377433, 1), Color(0.813732, 0.764735, 0.377433, 1), Color(0.815686, 0.764706, 0.376471, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopInfo:theme_override_colors/font_shadow_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 3.1, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.815686, 0.764706, 0.376471, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x2l7n"]
+resource_name = "puzzle4"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopInfo:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["", "Apenas ligue todos os holofotes", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopInfo:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 3.1, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.815686, 0.764706, 0.376471, 0), Color(0.813732, 0.764735, 0.377433, 1), Color(0.813732, 0.764735, 0.377433, 1), Color(0.815686, 0.764706, 0.376471, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopInfo:theme_override_colors/font_shadow_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 3.1, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.815686, 0.764706, 0.376471, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_urk7c"]
+resource_name = "puzzle3"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopInfo:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["", "Parece que os pesos nas bases se relacionam com a altura das plataformas...", ""]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -127,7 +207,9 @@ tracks/2/keys = {
 _data = {
 "RESET": SubResource("Animation_84egh"),
 "puzzle1": SubResource("Animation_jg5tn"),
-"puzzle2": SubResource("Animation_tdou3")
+"puzzle2": SubResource("Animation_tdou3"),
+"puzzle3": SubResource("Animation_urk7c"),
+"puzzle4": SubResource("Animation_x2l7n")
 }
 
 [node name="UI" type="Control"]
@@ -155,6 +237,7 @@ grow_vertical = 2
 script = ExtResource("1_0n4cg")
 
 [node name="TopInfo" type="Label" parent="."]
+layout_mode = 0
 offset_left = 5.0
 offset_top = 65.0
 offset_right = 1156.0

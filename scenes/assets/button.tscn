@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=4 uid="uid://b7cmfb8djr5u5"]
+[gd_scene load_steps=27 format=4 uid="uid://dhgnpb5m3so6r"]
 
+[ext_resource type="Script" path="res://scripts/spotlight_button.gd" id="1_i32dj"]
 [ext_resource type="Texture2D" uid="uid://d3030ngp6q770" path="res://assets/industrial_button_0.png" id="1_y03qw"]
 [ext_resource type="Texture2D" uid="uid://dl6mw5tibnund" path="res://assets/industrial_button_1.png" id="2_bjkjf"]
 [ext_resource type="Texture2D" uid="uid://c4uvi62o2eomm" path="res://assets/industrial_button_2.png" id="3_4flio"]
@@ -198,10 +199,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1v57f")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hoglb"]
-size = Vector3(0.19, 0.17, 0.19)
+size = Vector3(0.19, 0.23, 0.19)
 
 [node name="Button" type="StaticBody3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_i32dj")
 
 [node name="Sketchfab_Scene" type="Node3D" parent="."]
 
@@ -239,5 +243,5 @@ mesh = SubResource("ArrayMesh_don3a")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030175, -0.0504459, 0.000393048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030175, -0.019565, 0.000393048)
 shape = SubResource("BoxShape3D_hoglb")

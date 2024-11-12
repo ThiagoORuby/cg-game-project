@@ -19,6 +19,29 @@ var eletronic_balance_association_with_platforms = {
 	"eletronic_balance3" : "Plataform3"
 }
 
+var spotlight_map = {
+	"s1": false,
+	"s2": false,
+	"s3": false,
+	"s4": false,
+	"s5": false,
+	"s6": false,
+	"s7": false,
+	"s8": false,
+	"s9": false,
+	"s10": false,
+	"s11": false,
+	"s12": false
+}
+
+var spotlight_button_map = {
+	"A":[1,3,5,7,9],
+	"B":[2,4,6,8,10],
+	"C":[11,12,1,3,6],
+	"D":[1,5,4,8],
+	"E":[3,6,5,4,8]
+}
+
 
 var scene_states = {}
 var item_hash = {
