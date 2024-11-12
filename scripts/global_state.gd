@@ -1,6 +1,6 @@
 class_name GlobalState extends Node
 
-var has_played_intro_cutscene = true
+var has_played_intro_cutscene = false
 var first_time_running = true
 var plate_max_mass = {
 	"Plate1" : 15,
@@ -45,10 +45,10 @@ var spotlight_button_map = {
 
 var scene_states = {}
 var item_hash = {
-	"car_key": true,
-	"steering_wheel": true,
-	"gas": true,
-	"gate_key": true
+	"car_key": false,
+	"steering_wheel": false,
+	"gas": false,
+	"gate_key": false
 }
 
 var ordered_itens = []
