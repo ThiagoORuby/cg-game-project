@@ -1,6 +1,7 @@
 extends Area3D
 
 @onready var animation : AnimationPlayer = $"/root/Puzzle2/Plates/AnimationPlayer"
+@onready var label: Label3D = $"../Label3D"
 var objects = {}
 
 func sum (objects: Dictionary):
@@ -11,11 +12,13 @@ func sum (objects: Dictionary):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	label.text = "0/" + str(global_state.plate_max_mass[get_parent().name])
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	label.text = str(roundi(sum(objects))) + "/" + str(global_state.plate_max_mass[get_parent().name])
 	if sum(objects) >= global_state.plate_max_mass[get_parent().name]:
 		if not global_state.plate_status[get_parent().name]:
 			global_state.plate_status[get_parent().name] = true

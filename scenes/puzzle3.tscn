@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bm472pbnl3wk2" path="res://textures/Industrial_exterior_v2_Asphalt_1-4.png" id="1_e171i"]
 [ext_resource type="PackedScene" uid="uid://deewhbytfminu" path="res://scenes/scene_transition.tscn" id="1_lhxhd"]
 [ext_resource type="PackedScene" uid="uid://dy6lq0h3ubs2h" path="res://scenes/ui.tscn" id="3_40od3"]
-[ext_resource type="PackedScene" path="res://scenes/buildings/puzzle_3_building.tscn" id="3_dr31t"]
+[ext_resource type="PackedScene" uid="uid://dg6sn6116jxvv" path="res://scenes/buildings/puzzle_3_building.tscn" id="3_dr31t"]
 [ext_resource type="PackedScene" uid="uid://dtfrgr31wu2lc" path="res://scenes/assets/eletronic_balance.tscn" id="4_sq2kp"]
 [ext_resource type="PackedScene" uid="uid://56e46bgrkinq" path="res://scenes/assets/internal_door.tscn" id="5_2o6hg"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="5_l2hqs"]

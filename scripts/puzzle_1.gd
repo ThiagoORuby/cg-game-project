@@ -10,6 +10,13 @@ var objs = {
 @onready var cilindro = $shadow_cilinder
 @onready var cilindro_2 = $shadow_cilinder2
 
+@onready var item = $steering_wheel
+
+func _ready() -> void:
+	super()
+	if global_state.completed_puzzle["puzzle1"]:
+		item.visible = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	

@@ -111,5 +111,13 @@ libraries = {
 "": SubResource("AnimationLibrary_r0pej")
 }
 
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0.189455, 0, -0.981889, 0, 1, 0, 0.981889, 0, 0.189455, -26.1973, 11.941, 5.00393)
+transparency = 0.63
+pixel_size = 0.1
+text = "15/20"
+font_size = 64
+outline_size = 0
+
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

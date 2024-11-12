@@ -1,5 +1,12 @@
 extends BaseScene
 
+@onready var item = $gas
+
+func _ready() -> void:
+	super()
+	if global_state.completed_puzzle["puzzle2"]:
+		item.visible = false
+
 func check_plates ():
 	for key in global_state.plate_status:
 		if not global_state.plate_status[key]:

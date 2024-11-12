@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cmethh5rn7jb1" path="res://scenes/assets/external_door.tscn" id="29_qjmx5"]
 [ext_resource type="PackedScene" uid="uid://bynssfr4dlhhv" path="res://scenes/assets/old_door.tscn" id="30_5q5wa"]
 [ext_resource type="PackedScene" uid="uid://deewhbytfminu" path="res://scenes/scene_transition.tscn" id="30_70661"]
-[ext_resource type="PackedScene" path="res://scenes/assets/street_light.tscn" id="34_t4bgq"]
+[ext_resource type="PackedScene" uid="uid://c3kiuafasb8h0" path="res://scenes/assets/street_light.tscn" id="34_t4bgq"]
 
 [sub_resource type="Animation" id="Animation_jg8re"]
 length = 0.001
