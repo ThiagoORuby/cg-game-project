@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dbthkxkdu8ogi"]
+[gd_scene load_steps=28 format=4 uid="uid://dbthkxkdu8ogi"]
 
 [ext_resource type="Texture2D" uid="uid://bm472pbnl3wk2" path="res://textures/Industrial_exterior_v2_Asphalt_1-4.png" id="1_81min"]
 [ext_resource type="Script" path="res://scripts/puzzle_4.gd" id="1_q8p1c"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://56e46bgrkinq" path="res://scenes/assets/internal_door.tscn" id="5_qyunj"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="7_asdq5"]
 [ext_resource type="PackedScene" uid="uid://e4gg2olgi60v" path="res://scenes/assets/chest.tscn" id="7_feyya"]
+[ext_resource type="PackedScene" uid="uid://b7cmfb8djr5u5" path="res://scenes/assets/button.tscn" id="9_ntwrg"]
+[ext_resource type="PackedScene" uid="uid://cuwva865x7yjq" path="res://scenes/assets/spotlight.tscn" id="10_h8kdd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qkx1x"]
 sky_top_color = Color(0.753971, 0.30204, 0.392313, 1)
@@ -204,3 +206,18 @@ autoplay = "rotation"
 
 [node name="chest" parent="." instance=ExtResource("7_feyya")]
 transform = Transform3D(0.00503587, 0, 0, 0, 0.00503587, -1.11819e-18, 0, 1.11819e-18, 0.00503587, -0.921126, 0.648867, 4.22695)
+
+[node name="Button" parent="." instance=ExtResource("9_ntwrg")]
+transform = Transform3D(-1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0, 3, 6.45454, 1.70928, 0.272295)
+
+[node name="Button2" parent="." instance=ExtResource("9_ntwrg")]
+transform = Transform3D(-1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0, 3, 6.48285, 1.49866, -0.907548)
+
+[node name="Button3" parent="." instance=ExtResource("9_ntwrg")]
+transform = Transform3D(-1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0, 3, 6.48728, 1.4332, -2.21196)
+
+[node name="Spotlight" parent="." instance=ExtResource("10_h8kdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44306, 3.42162, -6.31942)
+
+[node name="Spotlight2" parent="." instance=ExtResource("10_h8kdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2925, 2.21423, -6.6682)

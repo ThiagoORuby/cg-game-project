@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c7h7pre5vnd2r"
+path.s3tc="res://.godot/imported/led_lightbulb_2.jpg-6f12853aac0a49af97e8a7088ed6e8eb.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "dec539d9b585ed06f3c0da3cd9ce2c7c"
+}
+
+[deps]
+
+source_file="res://assets/led_lightbulb_2.jpg"
+dest_files=["res://.godot/imported/led_lightbulb_2.jpg-6f12853aac0a49af97e8a7088ed6e8eb.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
