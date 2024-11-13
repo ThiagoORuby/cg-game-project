@@ -77,7 +77,9 @@ func grab_object():
 			global_state.collect_item(item_name)
 			target.queue_free()
 		elif target is SpotlightButton:
+			target.light_button.visible = true
 			print(target.button_code)
+			target.animation_player.play("play_button")
 			var button_name = target.button_code
 			var spotlight_codes = global_state.spotlight_button_map.get(button_name)
 			if spotlight_codes:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dhgnpb5m3so6r"]
+[gd_scene load_steps=31 format=4 uid="uid://dhgnpb5m3so6r"]
 
 [ext_resource type="Script" path="res://scripts/spotlight_button.gd" id="1_i32dj"]
 [ext_resource type="Texture2D" uid="uid://d3030ngp6q770" path="res://assets/industrial_button_0.png" id="1_y03qw"]
@@ -201,11 +201,73 @@ shadow_mesh = SubResource("ArrayMesh_1v57f")
 [sub_resource type="BoxShape3D" id="BoxShape3D_hoglb"]
 size = Vector3(0.19, 0.23, 0.19)
 
+[sub_resource type="Animation" id="Animation_u3c3s"]
+resource_name = "play_button"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene/Sketchfab_model/Button_fbx/RootNode/Cylinder/1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.25), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("light_button:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.5, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yiydt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("light_button:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+
+[sub_resource type="Animation" id="Animation_7svgq"]
+resource_name = "light"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ccb7"]
+_data = {
+"RESET": SubResource("Animation_yiydt"),
+"light": SubResource("Animation_7svgq"),
+"play_button": SubResource("Animation_u3c3s")
+}
+
 [node name="Button" type="StaticBody3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_i32dj")
+
+[node name="light_button" type="OmniLight3D" parent="."]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -0.0030175, 0.0889677, 0.000393048)
+light_color = Color(0.72549, 0.0588235, 0.0470588, 1)
+light_energy = 0.5
+light_indirect_energy = 0.86
+omni_range = 0.24
+omni_attenuation = 3.434
 
 [node name="Sketchfab_Scene" type="Node3D" parent="."]
 
@@ -245,3 +307,8 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030175, -0.019565, 0.000393048)
 shape = SubResource("BoxShape3D_hoglb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4ccb7")
+}

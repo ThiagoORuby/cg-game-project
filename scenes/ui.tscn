@@ -43,6 +43,46 @@ tracks/2/keys = {
 "values": [Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_npyig"]
+resource_name = "introduction"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopInfo:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 5.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["", "Ande em WASD. Objetos aqui podem ser capturados com o mouse, escalados com X e Z e rotacionados com Q e E", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopInfo:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 5.43333, 5.83333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.815686, 0.764706, 0.376471, 0), Color(0.813732, 0.764735, 0.377433, 1), Color(0.813732, 0.764735, 0.377433, 1), Color(0.815686, 0.764706, 0.376471, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopInfo:theme_override_colors/font_shadow_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 5.43333, 5.83333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.815686, 0.764706, 0.376471, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_jg5tn"]
 resource_name = "puzzle1"
 length = 4.0
@@ -198,46 +238,6 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.6, 3.1, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.815686, 0.764706, 0.376471, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_npyig"]
-resource_name = "introduction"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TopInfo:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 5.93333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": ["", "Ande em WASD. Objetos aqui podem ser capturados com o mouse, escalados com X e Z e rotacionados com Q e E", ""]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TopInfo:theme_override_colors/font_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 5.43333, 5.83333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.815686, 0.764706, 0.376471, 0), Color(0.813732, 0.764735, 0.377433, 1), Color(0.813732, 0.764735, 0.377433, 1), Color(0.815686, 0.764706, 0.376471, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TopInfo:theme_override_colors/font_shadow_color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 5.43333, 5.83333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.815686, 0.764706, 0.376471, 0)]
